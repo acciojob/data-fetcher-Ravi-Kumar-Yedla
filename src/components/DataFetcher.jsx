@@ -17,8 +17,8 @@ const DataFetcher = () => {
         const result = await response.json()
         setData(result)
 
-      } catch (err) {
-        setError(err.message)
+      } catch (error) {
+        setError(error)
       } finally {
         setLoading(false);
       }
@@ -27,10 +27,10 @@ const DataFetcher = () => {
   }, [])
 
   if (loading) {
-    <p>Loading...</p>
+    return <p>Loading...</p>
   }
   if (error) {
-    <p>Error:{error}</p>
+    return <p>Error:{error}</p>
   }
   return (
     <div>
